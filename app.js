@@ -58,19 +58,29 @@ btn_orderElm.addEventListener('click',  (e) => {
             if (ticketsElm.value >= 1 && ticketsElm.value <= 20) {
                 
                 if (nameElm.value == user.name && numberElm.value == user.number && ordersElm.value == user.order && addressElm.value == user.address ) {
-                    alert('Pemesanan Anda berhasil')
+                    Swal.fire(
+                        'Pemesanan Anda Berhasil',
+                        'Silakan Email Anda',
+                        'success'
+                      )
                 } else {
-                    alert('Data yang harus diisi harus sesuai dengan data akun yang terdaftar dan sesuai dengan pemesanan')
+                    Swal.fire('Data yang harus diisi harus sesuai dengan data akun yang terdaftar dan sesuai dengan pemesanan')
                 } 
 
             } else {
-                alert('Limit tiket yang dibatasi oleh kita adalah 1 sampai 20')
+                Swal.fire('Limit tiket yang dibatasi adalah 1 sampai 20')
             }
         
 
 
     }else{
-            alert('Form harus diisi dengan lengkap')
+        // Swal.fire('Form harus diisi dengan lengkap')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Form harus diisi dengan lengkap',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
     }
 
 
