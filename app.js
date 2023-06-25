@@ -32,7 +32,8 @@ const user = {
     name : 'Ksatria Pamungkas',
     number : '08123456789',
     order : 'Monas',
-    address : 'Sabang'
+    address : 'Sabang',
+    
 }
 
 
@@ -45,26 +46,50 @@ const timeElm = document.getElementById('time')
 const addressElm = document.getElementById('address')
 const messageElm = document.getElementById('message')
 
-const btn_orderElm = document.querySelector('.btn')
+const btn_orderElm = document.getElementById('btn123')
+
+btn_orderElm.addEventListener('click',  (e) => {
 
 
+    if(nameElm.value.length > 0 && numberElm.value.length > 0 && ordersElm.value.length > 0 && addressElm.value.length > 0)
+    {
 
-btn_orderElm = addEventListener("click", ()=>{
-    if((nameElm.value.length > 0 && numberElm.value.length > 0 && ordersElm.value.length > 0 && addressElm.value.length > 0) &&
-        (extraOrdersElm.value.length > 0 || ticketsElm.value.length > 0 || timeElm.value.length > 0 || messageElm.value.length > 0)){
 
-            if(nameElm.value == user.name && numberElm.value == user.number && ordersElm.value == user.order && addressElm.value == user.address ){
-                alert('Pemesanan Anda berhasil')
-            }else{
-                alert('Data yang harus diisi harus sesuai dengan data akun yang terdaftar dan sesuai dengan pemesanan')
+            if (ticketsElm.value >= 1 && ticketsElm.value <= 20) {
+                
+                if (nameElm.value == user.name && numberElm.value == user.number && ordersElm.value == user.order && addressElm.value == user.address ) {
+                    alert('Pemesanan Anda berhasil')
+                } else {
+                    alert('Data yang harus diisi harus sesuai dengan data akun yang terdaftar dan sesuai dengan pemesanan')
+                } 
+
+            } else {
+                alert('Limit tiket yang dibatasi oleh kita adalah 1 sampai 20')
             }
+        
+
+
+    }else{
+            alert('Form harus diisi dengan lengkap')
+    }
+
+
 
         
-    }
-    // else{
-    //     alert('Form harus diisi dengan lengkap')
-    // }
+
+    e.preventDefault()
 })
+  
+
+
+// btn_orderElm = addEventListener('click', (e) => {
+//     console.log("Halooooo")
+// })
+
+
+
+
+
 
 
 
@@ -74,7 +99,6 @@ btn_orderElm = addEventListener("click", ()=>{
 
 
 // Checkout JS End
-
 
 
 
