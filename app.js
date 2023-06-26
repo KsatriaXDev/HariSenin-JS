@@ -60,7 +60,7 @@ btn_orderElm.addEventListener('click',  (e) => {
                 if (nameElm.value == user.name && numberElm.value == user.number && ordersElm.value == user.order && addressElm.value == user.address ) {
                     Swal.fire(
                         'Pemesanan Anda Berhasil',
-                        'Silakan Email Anda',
+                        'Silakan Check Email Anda',
                         'success'
                       )
                 } else {
@@ -74,11 +74,11 @@ btn_orderElm.addEventListener('click',  (e) => {
 
 
     }else{
-        // Swal.fire('Form harus diisi dengan lengkap')
+        // alert('Form harus diisi dengan lengkap')
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Form harus diisi dengan lengkap',
+            text: 'Data Pemesanan Harus Diisi Dengan Lengkap',
             footer: '<a href="">Why do I have this issue?</a>'
           })
     }
